@@ -1,6 +1,7 @@
-const dailyBtn = document.querySelector('.daily')
-const weeklyBtn = document.querySelector('.weekly')
-const monthlyBtn = document.querySelector('.monthly')
+const dailyBtn = document.getElementById('daily')
+const weeklyBtn = document.getElementById('weekly')
+const monthlyBtn = document.getElementById('monthly')
+const durationBtns = document.querySelectorAll('.duration-btn')
 
 
 
@@ -34,19 +35,21 @@ function appendData(data) {
 dailyBtn.addEventListener('click', function () {
     duration = "daily";
     time = "Yesterday";
-    dailyBtn.classList.add('active')
+    updateButtonStyles(this);
     fetchAndUpdateData();
 });
 
 weeklyBtn.addEventListener('click', function () {
     duration = "weekly";
     time = "Last week";
+    updateButtonStyles(this);
     fetchAndUpdateData();
 });
 
 monthlyBtn.addEventListener('click', function () {
     duration = "monthly";
     time = "Last month";
+    updateButtonStyles(this);
     fetchAndUpdateData();
 });
 
@@ -61,4 +64,11 @@ function fetchAndUpdateData() {
         .catch(function (err) {
             console.log('error: ' + err);
         });
+}
+
+function updateButtonStyles(activeElement) {
+    document.querySelectorAll('.duration-btn').forEach(function (btn) {
+        btn.classList.remove('active');
+    });
+    activeElement.classList.add('active');
 }
