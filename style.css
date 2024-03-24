@@ -163,7 +163,7 @@ h2, .current-hrs {
     border-radius: 50%;
 }
 
-.timestamps > button {
+.duration-btn {
   background: transparent;
   border: none;
   color: var(--neutral-clr-desaturatedblue);
@@ -172,13 +172,11 @@ h2, .current-hrs {
   cursor: pointer;
 }
 
-.timestamps > button:hover {
+.duration-btn:hover {
   color: var(--neutral-clr-paleblue);
 }
 
-.active {
-  color: var(--neutral-clr-paleblue);
-}
+
 
 .activity-wrapper {
     display: grid;
@@ -290,3 +288,8 @@ main {
   justify-content: space-between;
 }
 }
+
+.active {
+  color: var(--neutral-clr-paleblue);
+}
+
