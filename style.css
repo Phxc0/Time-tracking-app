@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  font-weight: 400;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Firefox */
+input[type=number] {
+  appearance: textfield;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+:root {
+    --primary-clr-blue: hsl(246, 80%, 60%);
+    --work-clr-lred: hsl(15, 100%, 70%);
+    --play-clr-softblue: hsl(195, 74%, 62%);
+    --study-clr-lred: hsl(348, 100%, 68%);
+    --exercise-clr-limegreen: hsl(145, 58%, 55%);
+    --social-clr-violet: hsl(264, 64%, 52%);
+    --selfcare-clr-orange: hsl(43, 84%, 65%);
+
+    --neutral-clr-vdarkblue: hsl(226, 43%, 10%);
+    --neutral-clr-darkblue: hsl(235, 46%, 20%);
+    --neutral-clr-desaturatedblue: hsl(235, 45%, 61%);
+    --neutral-clr-paleblue: hsl(236, 100%, 87%);
+    
+    --ff-default: "Rubik", sans-serif;
+
+    --s-fs: 0.75rem;
+    --def-fs: 1rem;
+    --m-fs: 1.25rem;
+    --l-fs: 1.5rem;
+    --xl-fs: 1.75rem;
+    --xxl-fs: 2.5rem;
+
+    --padding: 2rem;
+    --margin: 2rem;
+}
+
+body {
+    background-color: var(--neutral-clr-vdarkblue);
+    font-family: var(--ff-default);
+    color: white;
+}
+
+main {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+}
+
+h2, .current-hrs {
+  font-weight: 300;
+}
+
+.grid-container {
+  display: grid;
+  gap: 1.5rem; 
+}
+
+.grid-c {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+
+}
+
+.grid-r {
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-content: space-between;
+}
+
+.user-card, .activity-card, .activity-wrapper {
+    background-color: var(--neutral-clr-darkblue);
+    border-radius: 1rem;
+}
+
+.user-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.user {
+  display: grid;
+  background-color: var(--primary-clr-blue);
+  border-radius: 1rem;
+  gap: 1rem;
+}
+
+
+.timestamps {
+  grid-template-rows: repeat(3,auto);
+  gap: 1rem;
+}
+
+.activity-card, .user {
+  padding: var(--padding);
+}
+
+.timestamps {
+  padding: 1rem var(--padding);
+}
+
+.hero {
+    max-width: 76px;
+    max-height: 76px;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+.timestamps > button {
+  background: transparent;
+  border: none;
+  color: var(--neutral-clr-desaturatedblue);
+  text-transform: capitalize;
+  text-align: left;
+  cursor: pointer;
+}
+
+.timestamps > button:hover {
+  color: var(--neutral-clr-paleblue);
+}
+
+.active {
+  color: var(--neutral-clr-paleblue);
+}
+
+.activity-wrapper {
+    display: grid;
+    grid-template-rows: 3rem 1fr;
+    border-radius: 1rem 1rem 2rem 2rem;    
+}
+
+.activity-wrapper > img{
+     justify-self: right;
+}
+
+.activity-icon {
+  margin-right: 1rem;
+  max-width: 65px;
+}
+
+.settings-icon {
+  max-width: 100%;
+}
+
+.current-hrs {
+ font-size: var(--xxl-fs);
+}
+
+.work {
+    background-color: var(--work-clr-lred);
+ }
+
+.play {
+    background-color: var(--play-clr-softblue);
+}
+.study {
+    background-color: var(--study-clr-lred);
+}
+.exercise {
+    background-color: var(--exercise-clr-limegreen);
+}
+.social {
+    background-color: var(--social-clr-violet);
+}
+.selfcare {
+    background-color: var(--selfcare-clr-orange);
+}
+
+
+@media screen and (min-width: 750px) {
+    .grid-container {
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(4, 1fr); 
+}
+
+.grid-item:nth-child(1) {
+    grid-row: span 4; 
+    grid-column: span 1; 
+}
+ 
+.grid-item:nth-child(n + 2) {
+    grid-row: span 2; 
+    grid-column: span 1;
+}
+
+.grid-item:nth-child(n + 2):nth-child(-n + 2) {
+    grid-column: span 1; 
+}
+
+.grid-item:nth-child(n + 3):nth-child(-n + 4) {
+   grid-column: span 1; 
+}
+
+.grid-item:nth-child(n + 5):nth-child(-n + 6) {
+    grid-column: span 1; 
+}
+
+.user-card {
+  grid-template-rows: 2.5fr 1fr;
+}
+}
+
+
+@media screen and (max-width: 751px) {
+:root {
+  --padding: 1rem;
+  --margin: 1rem;
+  --xxl-fs: 1rem;
+}
+
+main {
+  margin: 1rem;
+}
+
+.user-card {
+  grid-template-rows: 1fr 0.5fr;
+}
+
+.user, .timestamps {
+    grid-template-columns: repeat(3,auto);
+    justify-content: space-around;
+    align-items: center;
+}
+
+.timestamps {
+  padding: 0 1rem;
+}
+
+.hours {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: space-between;
+}
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Time tracking dashboard</title>
+</head>
+<body>
+
+  <main>
+    <div class="grid-container">
+      <div class="user-card grid-item">
+      <div class="user">
+        <img src="images/image-jeremy.png" alt="" class="hero">
+        <div>
+          <p class="report">report for</p>
+          <h2>Jerome Stanley</h2>
+        </div>
+      </div>
+      <div class="timestamps grid-r">
+        <button class="daily">daily</button>
+        <button class="weekly">weekly</button>
+        <button class="monthly">monthly</button>
+        </div>
+      </div>
+      <div class="grid-item activity-wrapper work">
+        <img src="images/icon-work.svg" alt="" class="activity-icon">
+       <div class="lower-body activity-card">
+        <div class="grid-c">
+         <h3 class="card-title">Work</h3>
+          <img src="images/icon-ellipsis.svg" alt="" class="settings-icon">
+       </div>
+       <div class="hours">
+         <p class="current-hrs"></p>
+         <p class="previous-hrs"> </p>
+       </div> 
+      </div>   
+      </div>
+      <div class="grid-item activity-wrapper play">
+            <img src="images/icon-play.svg" alt="" class="activity-icon">
+      <div class="lower-body activity-card">
+      <div class="grid-c">
+        <h3 class="card-title">Play</h3>
+        <img src="images/icon-ellipsis.svg" alt="" class="settings-icon">
+      </div>
+             <div class="hours">
+         <p class="current-hrs"></p>
+         <p class="previous-hrs"> </p>
+       </div> 
+      </div>
+      </div>
+      <div class="grid-item activity-wrapper study">
+        <img src="images/icon-study.svg" alt="" class="activity-icon">
+      <div class="lower-body activity-card ">
+        <div class="grid-c">
+          <h3 class="card-title">Study</h3>
+          <img src="images/icon-ellipsis.svg" alt="" class="settings-icon">
+        </div>
+               <div class="hours">
+         <p class="current-hrs"></p>
+         <p class="previous-hrs"> </p>
+       </div> 
+      </div>
+      </div>
+      <div class="grid-item activity-wrapper exercise">
+           <img src="images/icon-exercise.svg" alt="" class="activity-icon">
+      <div class="lower-body activity-card">
+        <div class="grid-c">
+          <h3 class="card-title">Exercise</h3>
+                <img src="images/icon-ellipsis.svg" alt="" class="settings-icon">
+        </div>
+               <div class="hours">
+         <p class="current-hrs"></p>
+         <p class="previous-hrs"> </p>
+       </div> 
+    </div>
+      </div>
+      <div class="grid-item activity-wrapper social">
+          <img src="images/icon-social.svg" alt="" class="activity-icon">
+      <div class="lower-body activity-card">
+        <div class="grid-c">
+          <h3 class="card-title">Social</h3>
+                <img src="images/icon-ellipsis.svg" alt="" class="settings-icon">
+        </div>
+               <div class="hours">
+         <p class="current-hrs"></p>
+         <p class="previous-hrs"> </p>
+       </div> 
+    </div>
+      </div>
+      <div class="grid-item activity-wrapper selfcare">
+          <img src="images/icon-self-care.svg" alt="" class="activity-icon">
+      <div class="lower-body activity-card">
+        <div class="grid-c">
+          <h3 class="card-title">Self Care</h3>
+                <img src="images/icon-ellipsis.svg" alt="" class="settings-icon">
+        </div>
+           <div class="hours">
+         <p class="current-hrs"></p>
+         <p class="previous-hrs"> </p>
+       </div> 
+    </div>
+      </div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
