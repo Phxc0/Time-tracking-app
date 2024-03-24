@@ -1,8 +1,6 @@
-const cardTitle = document.querySelectorAll('.card-title')
 const dailyBtn = document.querySelector('.daily')
 const weeklyBtn = document.querySelector('.weekly')
 const monthlyBtn = document.querySelector('.monthly')
-const test = document.getElementsByClassName(".current-hrs")
 
 
 
@@ -24,22 +22,7 @@ function appendData(data) {
     const currentHrs = document.querySelectorAll('.current-hrs');
     const previousHrs = document.querySelectorAll('.previous-hrs');
 
-    dailyBtn.addEventListener('click', ()=> {
-   duration = "daily"
-   time ="Yesterday"
-      appendData(data)
 
-})
-    weeklyBtn.addEventListener('click', ()=> {
-   duration = "weekly"
-   time ="Last week"
-      appendData(data)
-})
-    monthlyBtn.addEventListener('click', ()=> {
-   duration = "monthly"
-   time ="Last month"
-   appendData(data)
-})
 
     for (let i = 0; i < data.length; i++) {
         currentHrs[i].textContent = `${data[i].timeframes[duration].current}hrs`;
@@ -48,3 +31,34 @@ function appendData(data) {
 }
 
 
+dailyBtn.addEventListener('click', function () {
+    duration = "daily";
+    time = "Yesterday";
+    dailyBtn.classList.add('active')
+    fetchAndUpdateData();
+});
+
+weeklyBtn.addEventListener('click', function () {
+    duration = "weekly";
+    time = "Last week";
+    fetchAndUpdateData();
+});
+
+monthlyBtn.addEventListener('click', function () {
+    duration = "monthly";
+    time = "Last month";
+    fetchAndUpdateData();
+});
+
+function fetchAndUpdateData() {
+    fetch('data.json')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            appendData(data);
+        })
+        .catch(function (err) {
+            console.log('error: ' + err);
+        });
+}
